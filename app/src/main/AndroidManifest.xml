@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.faaa">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/pose_estimation"
+            android:label="SummaAI"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ImgClassifyActivity" android:label="物品分类"/>
+        <activity android:name=".ImgClassifySettingsActivity" android:label="Settings" />
+
+
+        <activity android:name=".ObjDetectActivity" android:label="物品检测"/>
+        <activity android:name=".ObjDetectSettingsActivity" android:label="Settings"/>
+
+
+        <activity android:name=".FaceDetectActivity" android:label="人脸抓拍" />
+
+        <activity android:name=".FaceRecognizeActivity"  android:label="人脸识别"/>
+        <activity android:name=".FaceRecognizeSettingsActivity" android:label="Settings" />
+
+
+        <activity
+                android:name=".SettingsActivity"
+                android:label="Settings">
+        </activity>
+
+        <activity
+                android:name=".CharacterRecognitionActivity"
+                android:label="文字识别"/>
+        <activity
+                android:name=".CharacterRecognitionSettingsActivity"
+                android:label="Settings">
+        </activity>
+
+
+        <activity android:name=".PosenetActivity" android:label="姿态估计"/>
+        <activity android:name=".CameraActivity"  android:label="姿态估计"/>
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="com.faaa.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+    </application>
+
+</manifest>
